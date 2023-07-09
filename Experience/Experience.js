@@ -20,8 +20,8 @@ export default class Experience {
 		this.time = new Time();
 		this.camera = new Camera();
 		this.renderer = new Renderer();
-		this.world = new World();
 		this.resources = new Resources(assets);
+		this.world = new World();
 
 		this.sizes.on("resize", () => {
 			this.resize();

@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import Experience from "../Experience.js";
-import * as THREE from "three";
 import Environment from "./Environment.js";
+import Computer from "./Computer.js";
 
 export default class World extends EventEmitter {
 	constructor() {
@@ -13,8 +13,11 @@ export default class World extends EventEmitter {
 		this.camera = this.experience.camera;
 		this.resources = this.experience.resources;
 
+		console.log(this.experience);
+
 		this.resources.on("ready", () => {
 			this.environment = new Environment();
+			this.computer = new Computer();
 		});
 	}
 }
